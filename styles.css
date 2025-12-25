@@ -389,9 +389,6 @@ section {
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
     margin-top: 3rem;
 }
 
@@ -419,16 +416,24 @@ section {
 }
 
 .contact-info {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    width: 100%;
 }
 
 .info-item {
-    padding: 1.5rem;
+    padding: 2rem;
     background: var(--white);
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .info-item h3 {
@@ -492,20 +497,33 @@ section {
     }
 
     .company-logos {
+        flex-direction: column;
         gap: 1.5rem;
+        padding: 0 1rem;
     }
 
     .company-logo-card {
-        min-width: 140px;
+        min-width: 100%;
+        max-width: 100%;
+        flex: none;
+        padding: 1.5rem 2rem;
     }
 
     .company-logo-card img {
         width: 100px;
+        max-width: 100%;
+    }
+
+    .company-name {
+        font-size: 2rem;
     }
 
     .contact-content {
-        grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -524,5 +542,20 @@ section {
 
     section {
         padding: 60px 0;
+    }
+
+    .company-logo-card {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .company-logo-card img {
+        width: 80px;
+    }
+
+    .company-name {
+        font-size: 1.5rem;
+        text-align: center;
     }
 }
